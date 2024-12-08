@@ -1,15 +1,20 @@
 import { Fragment } from "react/jsx-runtime";
 
 function ListGroup() {
+  let item = ["Kampala", "Nairobi", "Kisumu", "Jinja", "Hoima"];
+  item =[];
+  const getMessage =()=>{
+    return item.length === 0 ? <p>message not found</p>: null;;
+}
+
   return (
     <Fragment>
       <h1>Listing</h1>
+      {getMessage()}
       <ul className="list-group">
-        <li className="list-group-item">An item</li>
-        <li className="list-group-item">A second item</li>
-        <li className="list-group-item">A third item</li>
-        <li className="list-group-item">A fourth item</li>
-        <li className="list-group-item">And a fifth one</li>
+        {item.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
       </ul>
     </Fragment>
   );
