@@ -1,9 +1,16 @@
 import { useState } from "react";
 import { Fragment } from "react/jsx-runtime";
 
+//{item:[], heading: string }
+interface Props{
 
-function ListGroup() {
-  let item = ["Kampala", "Nairobi", "Kisumu", "Jinja", "Hoima"];
+    item: string[];
+    heading: string;
+}
+
+
+function ListGroup({item, heading }: Props) {
+  
   //let selectedIndex = 0;
   //hook
   const [selectedIndex, setSelectedIndex] = useState(-1);
@@ -13,7 +20,7 @@ function ListGroup() {
   
   return (
     <Fragment>
-      <h1>Listing</h1>
+      <h1>{heading}</h1>
       {item.length === 0 && <p>message not found</p>}
       <ul className="list-group">
         {item.map((item, index) => (
