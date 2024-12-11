@@ -19,7 +19,9 @@ function ListGroup({item, heading, onSelectItem}: Props) {
   //const [name, setName ] = useState('');
 
  
-  
+  //props are imuutable while states are muttable
+
+
   return (
     <Fragment>
       <h1>{heading}</h1>
